@@ -3,7 +3,6 @@ import java.awt.Frame;
 import java.awt.Window;
 
 import excel_macro.tools.VersionIndicator;
-import ij.IJ;
 import ij.ImagePlus;
 import ij.WindowManager;
 import ij.gui.DialogListener;
@@ -13,9 +12,7 @@ import ij.measure.Calibration;
 import ij.measure.ResultsTable;
 import ij.plugin.filter.Analyzer;
 import ij.plugin.filter.PlugInFilter;
-import ij.process.AutoThresholder;
 import ij.process.ImageProcessor;
-import ij.process.AutoThresholder.Method;
 import ij.text.TextPanel;
 import ij.text.TextWindow;
 import imageProcessing.tools.ImageProcessingTools;

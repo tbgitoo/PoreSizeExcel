@@ -4,6 +4,49 @@ This is an ImageJ plugin providing two indepedent, but interconnected functional
 
 1) The possibility to run macros from an Excel file to automatize image treatment on large batches
 
-2) An interface to Beat Münch's xlib plugin allowing to do serial pore size estimation using the Excel macro reading functionality.
+2) An interface to Beat Muench's xlib plugin allowing to do serial pore size estimation using the Excel macro reading functionality.
+
+To install this plugin, downlaod the latest binary release (.jar file), at present at 
+https://github.com/tbgitoo/PoreSizeExcel/releases/download/v0.9/PoreSizeExcel_.jar
+Place the PoreSizeExcel_.jar file in the "plugins" folder of your Fiji or ImageJ installation.
+
+If you want to use the Excel macro running capacity only, then the 
+following .jar files should additionally be placed in your ImageJ or Fiji installation 
+(in the jars folder):
+A) "poi-3.17.jar" or higher: Java-Excel interface, Apache library, from 
+    https://mvnrepository.com/artifact/org.apache.poi/poi
+B) "poi-ooxml-3.17.jar" or higher: Java-Excel interface, Apache library, from 
+	https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+C) "poi-ooxml-schemas-3.17.jar" or higher: Java-Excel interface, Apache library, from 
+	https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas
+D)  "jama-1.0.3.jar": Generic Java math library, from 
+	https://math.nist.gov/javanumerics/jama
+In many cases you will already have some or all these files due to the installation of other plugins, but please check and if 
+necesary complete.
+
+With these dependencies satisfied, you should be able to see the plugin in the ImageJ menu hierarchy after restart. In the 
+"Plugins" menu, you should see an entry "Microniche PoreSize Excel". Of these, the generic and Excel-related functionality should
+already work, that is the submenu entries "Batch Process with Excel File", 
+"PoreSizeExcel_.jar Version", "Dependencies", and "Credits".
 
 
+Concerning the pore size measurement, Beat Muench (EMPA, Switzerland) has developped a great ImageJ
+plugin that among many other things fits maximal spheres into the pore space to get a continuous pore size distribution. This
+plugin is term xlib, described at https://imagej.github.io/User_Xlib and available for 
+download at https://sites.imagej.net/Xlib/plugins/
+
+To satisfy the dependency of this plugin, get the most recent xlib_.jar version from https://sites.imagej.net/Xlib/plugins/ 
+and place it in the "plugins" folder of your ImageJ or Fiji installation. It might be necessary to remove the version number
+from the filename as at least some ImageJ installations do not recognize the xlib_.jar1234 type of file names as Java files.
+After restart of ImageJ, you should see a point "Beat" in the Plugins menu
+ 
+Here, we provide a small wrapper around the maximal sphere facility that directly allows to set the
+correct scale from the image information, get tabulated results and automatically close the 
+intermediate windows. This enables automation along with the Excel macro reading capacity, 
+otherwise this needs to be done manually (from Plugins > Beat > Pore Size Distribution). 
+
+This part of the plugin is available through
+"Plugins > Microniche PoreSizeExcel > xlib Pore Size Distribution". It is independent of the Excel macro part in the 
+sense that it can be used on an open gray scale image on its own, but compatible 
+since it can be run compactly by a macro.
+  
