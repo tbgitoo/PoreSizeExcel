@@ -1,0 +1,9 @@
+PoreSizeExcel
+
+This is an ImageJ plugin providing two indepedent, but interconnected functionalities: 
+
+1) The possibility to run macros from an Excel file to automatize image treatment on large batches
+
+2) An interface to Beat Münch's xlib plugin allowing to do serial pore size estimation using the Excel macro reading functionality.
+
+
