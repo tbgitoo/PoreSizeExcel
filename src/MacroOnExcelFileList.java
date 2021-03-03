@@ -16,15 +16,14 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import excel_macro.tools.ExcelHolder;
-import excel_macro.tools.excelMacroTools;
 import excel_macro.tools.PathHandler;
+import excel_macro.tools.excelMacroTools;
 import ij.IJ;
 import ij.gui.DialogListener;
 import ij.gui.GenericDialog;
 import ij.measure.ResultsTable;
 import ij.plugin.PlugIn;
 import ij.plugin.filter.Analyzer;
-import ij.plugin.frame.Recorder;
 
 public class MacroOnExcelFileList implements PlugIn, DialogListener {
 
