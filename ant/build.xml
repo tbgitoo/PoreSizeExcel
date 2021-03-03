@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PoreSizeExcel" default="generate-jar" basedir="/">
+
+
+<target name = "generate-jar">
+<jar destfile = "/Users/thomasbraschler/Documents/imageJ_workspace/PoreSizeExcelMaster/bin/jars/PoreSizeExcel_.jar"
+   basedir = "/Users/thomasbraschler/Documents/imageJ_workspace/PoreSizeExcelMaster/bin"
+   includes = "excel_macro/**,*.class,imageProcessing/**,org/**"
+    >
+     <fileset dir="/Users/thomasbraschler/Documents/imageJ_workspace/PoreSizeExcelMaster/config"/>
+    </jar>
+</target>
+
+</project>
