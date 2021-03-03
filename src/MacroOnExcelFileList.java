@@ -39,7 +39,7 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 	
 
 	// The name of the file column in the Excel file
-	public static String fileColumnName="File";
+	public static String fileColumnName="Fiile";
 
 	
 	// Name of the column that contains the macro (or "" if the macro should be read from 
