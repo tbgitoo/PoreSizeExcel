@@ -49,4 +49,11 @@ This part of the plugin is available through
 "Plugins > Microniche PoreSizeExcel > xlib Pore Size Distribution". It is independent of the Excel macro part in the 
 sense that it can be used on an open gray scale image on its own, but compatible 
 since it can be run compactly by a macro.
+
+We further used the Java least squares fitting library by Matthew B. Smith 
+(http://orangepalantir.org; https://github.com/odinsbane/least-squares-in-java/). 
+This part is integrated into the jar, and so nothing needs to be done to satisfy the dependency, we however
+acknowledge here the great work that Matthew B. Smith has put into this.
+
+
   
