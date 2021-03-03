@@ -3,11 +3,11 @@
 
 
 <target name = "generate-jar">
-<jar destfile = "/Users/thomasbraschler/Documents/imageJ_workspace/PoreSizeExcelMaster/bin/jars/PoreSizeExcel_.jar"
-   basedir = "/Users/thomasbraschler/Documents/imageJ_workspace/PoreSizeExcelMaster/bin"
+<jar destfile = "/Users/thomasbraschler/git/PoreSizeExcel/bin/jars/PoreSizeExcel_.jar"
+   basedir = "/Users/thomasbraschler/git/PoreSizeExcel/bin"
    includes = "excel_macro/**,*.class,imageProcessing/**,org/**"
     >
-     <fileset dir="/Users/thomasbraschler/Documents/imageJ_workspace/PoreSizeExcelMaster/config"/>
+     <fileset dir="/Users/thomasbraschler/git/PoreSizeExcel/config"/>
     </jar>
 </target>
 
