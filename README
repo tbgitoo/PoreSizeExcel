@@ -6,7 +6,11 @@ This is an ImageJ plugin providing two indepedent, but interconnected functional
 
 2) An interface to Beat Muench's xlib plugin allowing to do serial pore size estimation using the Excel macro reading functionality.
 
-Detailed installation and usage instructions are provided in the user manual: https://github.com/tbgitoo/PoreSizeExcel/blob/master/User%20Manual.pdf
+Detailed installation and usage instructions are provided 
+in the user manual: https://github.com/tbgitoo/PoreSizeExcel/blob/master/User%20Manual.pdf
+Minimal installation instructions and a short description is given here as well.
+
+Minimal installation instructions
 
 To install this plugin, downlaod the latest binary release (.jar file), at present at 
 https://github.com/tbgitoo/PoreSizeExcel/releases/download/v0.9/PoreSizeExcel_.jar
@@ -51,6 +55,30 @@ This part of the plugin is available through
 "Plugins > Microniche PoreSizeExcel > xlib Pore Size Distribution". It is independent of the Excel macro part in the 
 sense that it can be used on an open gray scale image on its own, but compatible 
 since it can be run compactly by a macro.
+
+Usage
+
+The primary use of the Excel reading part of this plugin is to run macros on a list of images and to collect the 
+results of the macro or at least a trace of the actual macros run, including image opening 
+and closing. This functionality is available in ImageJ through 
+
+Plugins > Microniche PoreSizeExcel > Batch Process with Excel File
+
+Please refer to the user manual at 
+https://github.com/tbgitoo/PoreSizeExcel/blob/master/User%20Manual.pdf for details.
+
+Regarding the pore size analysis, this plugin provides a simplified interface to the determination of
+pore size distribution provided in Beat Münch's xlib plugin. The idea is to facilitate the use
+of the xlib plugin in automated pore size determination as directed by an Excel file. 
+The simplified pore size functionality is available in ImageJ through:
+
+Plugins > Microniche PoreSizeExcel > xlib Pore Size Distribution
+
+For details, please again refer to the user manual at 
+https://github.com/tbgitoo/PoreSizeExcel/blob/master/User%20Manual.pdf 
+
+
+
 
 We further used the Java least squares fitting library by Matthew B. Smith 
 (http://orangepalantir.org; https://github.com/odinsbane/least-squares-in-java/). 
