@@ -1,5 +1,5 @@
 
-
+// coucou
 
 import java.awt.AWTEvent;
 import java.awt.Choice;
@@ -35,6 +35,8 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 
 	// The name of the folder Column in the Excel file
 	public static String folderColumnName="Folder";
+	
+	public static boolean useFolderColumn=false;
 
 	
 
@@ -500,7 +502,7 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 
 		// Override from the Excel file
 		// This allows to have a different macro for every line and therefore image file
-		gd.addMessage("Use Macro from Excel File? If yes, indicate column, otherwise leave empty");
+		gd.addMessage("Use Macro from Excel File? If yes, indicate column, otherwise leave empty (-)");
 
 
 
