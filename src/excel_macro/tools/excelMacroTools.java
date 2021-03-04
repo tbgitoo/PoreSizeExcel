@@ -266,7 +266,15 @@ public static String runMacrosForExcelRowWithReplacement(Row theRow, int fileCol
 	
 	Cell theFile = theRow.getCell(fileColumn);
 	
-	Cell theFolder = theRow.getCell(folderColumn);
+	Cell theFolder = null;
+	// We use -1 to encode that the folder column functionality is not used
+	if(folderColumn>-1)
+	{
+		
+	
+		theFolder = theRow.getCell(folderColumn);
+	
+	}
 	
 	String openMacro = "open(\"";
 	
@@ -274,8 +282,16 @@ public static String runMacrosForExcelRowWithReplacement(Row theRow, int fileCol
 	{
 		openMacro = openMacro+root_folder+"/";
 	}
-	
-	openMacro = openMacro+theFolder.getStringCellValue()+"/"+theFile.getStringCellValue()+"\"); ";
+	// Add the folder to the file path if needed
+	if(folderColumn>-1)
+	{	
+		if(!theFolder.getStringCellValue().equals(""))
+		{
+			openMacro = openMacro+theFolder.getStringCellValue()+"/";
+		}
+	}
+	// Add the file, which is needed regardless of whether the folder is used
+	openMacro = openMacro+theFile.getStringCellValue()+"\"); ";
 	
 	String theMacro=defaultMacro;
 	

@@ -1,5 +1,5 @@
 
-// coucou
+
 
 import java.awt.AWTEvent;
 import java.awt.Choice;
@@ -136,6 +136,13 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 		fileColumnName = gd.getNextChoice();
 
 		folderColumnName = gd.getNextChoice();
+		if(folderColumnName.equals("-"))
+		{
+			folderColumnName="";
+			useFolderColumn=false;
+		} else {
+			useFolderColumn=true;
+		}
 
 		doCheckOnly = gd.getNextBoolean();
 		
@@ -300,7 +307,11 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 			
 			Cell theFile = theRow.getCell(fileColumn);
 			
-			Cell theFolder = theRow.getCell(folderColumn);
+			Cell theFolder = null;
+			if(folderColumn > -1 )
+			{
+				theFolder = theRow.getCell(folderColumn);
+			}
 			
 			
 			
@@ -311,9 +322,15 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 				filePath = filePath+root_folder+"/";
 			}
 			
+			if(folderColumn > -1 )
+			{
+				if(!excelMacroTools.extractStringFromCell(theFolder).equals(""))
+					filePath=filePath+excelMacroTools.extractStringFromCell(theFolder)+"/";
+			}
 			
 			
-			filePath = filePath+excelMacroTools.extractStringFromCell(theFolder)+"/"+theFile.getStringCellValue();
+			
+			filePath = filePath+theFile.getStringCellValue();
 			
 			File f = new File(filePath);
 			if(!f.exists() ) { 
@@ -345,7 +362,11 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 	{
 		
 		int fileColumn = getColumn(fileColumnName);
-		int folderColumn = getColumn(folderColumnName);
+		int folderColumn = -1;
+		if(useFolderColumn)
+		{
+			folderColumn=getColumn(folderColumnName);
+		}
 		
 
 		// We need a resutsTable to hold all the results
@@ -529,8 +550,26 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 		gd.addChoice("File column", excelMacroTools.excelHeaders(sheet, HEADER_ROW), fileColumnName);
 
 		gd.addMessage("Column in the Excel File that contains the folder (relative to the root folder above) in which the file is located");
+		gd.addMessage("If the image files are all in the root folder indicated above, choose empty (-).");
 
-		gd.addChoice("Folder column", excelMacroTools.excelHeaders(sheet, HEADER_ROW), folderColumnName);
+		String[] folderColsExcel=excelMacroTools.excelHeaders(sheet, HEADER_ROW);
+
+		String[] folderColsChoice = new String[folderColsExcel.length+1];
+
+		folderColsChoice[0]="-";
+
+		for(int ind=1; ind<choices.length; ind++)
+		{
+			folderColsChoice[ind]=folderColsExcel[ind-1];
+		}
+		
+		String preselected = folderColumnName;
+		if(!useFolderColumn | folderColumnName.equals(""))
+		{
+			preselected="-";
+		}
+		
+		gd.addChoice("Folder column", folderColsChoice, preselected);
 
 		gd.addCheckbox("Check file presence only", doCheckOnly);
 		
