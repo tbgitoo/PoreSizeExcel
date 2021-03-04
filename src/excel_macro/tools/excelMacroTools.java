@@ -285,10 +285,13 @@ public class excelMacroTools {
 		}
 		// Add the folder to the file path if needed
 		if(folderColumn>-1)
-		{	
-			if(!theFolder.getStringCellValue().equals(""))
+		{
+			if(theFolder!=null)
 			{
-				openMacro = openMacro+theFolder.getStringCellValue()+"/";
+			if(!theFolder.getStringCellValue().equals(""))
+				{
+					openMacro = openMacro+theFolder.getStringCellValue()+"/";
+				}
 			}
 		}
 		// Add the file, which is needed regardless of whether the folder is used
