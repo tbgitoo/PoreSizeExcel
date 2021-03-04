@@ -6,6 +6,8 @@ This is an ImageJ plugin providing two indepedent, but interconnected functional
 
 2) An interface to Beat Muench's xlib plugin allowing to do serial pore size estimation using the Excel macro reading functionality.
 
+Detailed installation and usage instructions are provided in the user manual: https://github.com/tbgitoo/PoreSizeExcel/blob/master/User%20Manual.pdf
+
 To install this plugin, downlaod the latest binary release (.jar file), at present at 
 https://github.com/tbgitoo/PoreSizeExcel/releases/download/v0.9/PoreSizeExcel_.jar
 Place the PoreSizeExcel_.jar file in the "plugins" folder of your Fiji or ImageJ installation.
