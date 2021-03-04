@@ -30,7 +30,8 @@ D)  "jama-1.0.3.jar": Generic Java math library, from
 In many cases you will already have some or all these files due to the installation of other plugins, but please check and if 
 necesary complete.
 
-With these dependencies satisfied, you should be able to see the plugin in the ImageJ menu hierarchy after restart. In the 
+With these dependencies satisfied, you should be able to see the plugin 
+in the ImageJ menu hierarchy after restart of ImageJ. In the 
 "Plugins" menu, you should see an entry "Microniche PoreSize Excel". Of these, the generic and Excel-related functionality should
 already work, that is the submenu entries "Batch Process with Excel File", 
 "PoreSizeExcel_.jar Version", "Dependencies", and "Credits".
