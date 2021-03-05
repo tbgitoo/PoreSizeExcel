@@ -27,6 +27,8 @@ C) "poi-ooxml-schemas-3.17.jar" or higher: Java-Excel interface, Apache library,
 	https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas
 D) "xmlbeans-2.6.0.jar" or higher: xml tools from Apache, from 
 	https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans
+E) "curvesapi-1.04.jar" or higher: Mathematical tools for curves, Apache, from 
+	https://mvnrepository.com/artifact/com.github.virtuald/curvesapi
 E)  "jama-1.0.3.jar": Generic Java math library, from 
 	https://math.nist.gov/javanumerics/jama
 In many cases you will already have some or all these files due to the installation of other plugins, but please check and if 
