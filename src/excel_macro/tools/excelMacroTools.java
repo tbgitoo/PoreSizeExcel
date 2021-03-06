@@ -9,7 +9,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
-import ij.IJ;
 import ij.io.OpenDialog;
 import ij.macro.Interpreter;
 import ij.measure.ResultsTable;
