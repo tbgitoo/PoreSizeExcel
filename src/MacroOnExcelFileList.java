@@ -235,6 +235,8 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 			return false;
 		}
 		
+		
+		
 		String[] fragments=filePath.split("/");
 		
 		StringJoiner sj = new StringJoiner("/", "", "");
@@ -516,7 +518,7 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 		// Possibility to provide a macro here; if a macro column name is provided
 		// below, this will be overridden
 		gd.addMessage("Macro to run on each file");
-		gd.addTextAreas(theMacro, null, 20, 50);
+		gd.addTextAreas(theMacro, null, 4, 108);
 
 
 
