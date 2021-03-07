@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.StringJoiner;
 import java.util.Vector;
+import java.util.regex.Pattern;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
@@ -237,9 +238,15 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 		
 		
 		
-		String[] fragments=filePath.split("/");
+		String[] fragments=filePath.split(Pattern.quote(File.separator));
 		
-		StringJoiner sj = new StringJoiner("/", "", "");
+		String joinCharacter = File.separator;
+		if(!joinCharacter.equals("/"))
+		{
+			joinCharacter=File.separator.concat(File.separator);
+		}
+		
+		StringJoiner sj = new StringJoiner(joinCharacter, "", "");
 		for(int index=0; index<fragments.length-1; index++)
 		{
 			sj.add(fragments[index]);
