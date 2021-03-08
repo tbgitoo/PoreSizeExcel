@@ -13,7 +13,7 @@ Minimal installation instructions and a short description is given here as well.
 Minimal installation instructions
 
 To install this plugin, downlaod the latest binary release (.jar file), at present at 
-https://github.com/tbgitoo/PoreSizeExcel/releases/download/v0.9/PoreSizeExcel_.jar
+https://github.com/tbgitoo/PoreSizeExcel/releases/download/v1.0/PoreSizeExcel_.jar
 Place the PoreSizeExcel_.jar file in the "plugins" folder of your Fiji or ImageJ installation.
 
 If you want to use the Excel macro running capacity only, then the 
