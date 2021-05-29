@@ -90,6 +90,8 @@ public class excelMacroTools {
 		for(int indHeaders=0; indHeaders<n_headers; indHeaders++)
 		{
 			Cell theCell=headers.getCell(indHeaders);
+			if(theCell != null)
+			{
 			if(theCell.getCellTypeEnum()==CellType.STRING)
 			{
 
@@ -99,6 +101,7 @@ public class excelMacroTools {
 				}
 
 
+			}
 			}
 
 		}
