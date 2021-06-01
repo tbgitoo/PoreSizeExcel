@@ -133,18 +133,25 @@ public class WrapperPSD_Empa_Beat implements PlugInFilter,DialogListener {
 		// the xPore_Size_Distribution generates
 		close_xGeomView_Windows();
 
+		
 
 		ImagePlus poreImage = null;
 
-
+		if(avoidEdgePores || keep_pore_image_open)
+		{
 		
 		poreImage=WindowManager.getImage("Pore size image");
 
+		
+		
+			
+		
 		Calibration theCal=imp.getCalibration();
 			
 			
-				
+		
 		poreImage.setCalibration(theCal);
+		
 			
 		if(avoidEdgePores)
 		{
@@ -155,7 +162,10 @@ public class WrapperPSD_Empa_Beat implements PlugInFilter,DialogListener {
 
 		poreImage.updateAndDraw();
 
-
+		
+		}
+		
+		
 
 		
 
@@ -207,7 +217,7 @@ public class WrapperPSD_Empa_Beat implements PlugInFilter,DialogListener {
 		getNonImageFrame("PSD of "+imp.getTitle()).dispose();
 
 		
-		if(!keep_pore_image_open)
+		if(avoidEdgePores && ! keep_pore_image_open)
 		{
 			poreImage.close();
 		}
