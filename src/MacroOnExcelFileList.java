@@ -229,6 +229,9 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 		} catch (InvalidFormatException e) {
 			IJ.handleException(e);
 			foundFile=false;
+		} catch (NullPointerException e)
+		{
+			foundFile=false;
 		}
 
 		if(!foundFile)
@@ -337,7 +340,13 @@ public class MacroOnExcelFileList implements PlugIn, DialogListener {
 					filePath=filePath+excelMacroTools.extractStringFromCell(theFolder)+"/";
 			}
 			
-			
+			if(theFile == null)
+			{
+				IJ.showMessage("Empty file cell"+
+			     "\nColumn "+(fileColumn+1)+", Row "+(ind+1)+" empty\n"+
+				 "Incomplete line? Space characters? Delete this line? Lines below?");
+			    return false;
+			}
 			
 			filePath = filePath+theFile.getStringCellValue();
 			
